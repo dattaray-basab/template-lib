@@ -13,7 +13,6 @@ func SetRecipePath(dirPath string) {
 	foundPath, err := common.GetNamedPath(dirPath, "__DEV_3")
 	if err != nil {
 		fmt.Println("misc/envmgr.go::SetRecipePath: err::", err)
-		return 
 	}
 	fmt.Println("misc/envmgr.go::SetRecipePath: foundPath::", foundPath)
 }
