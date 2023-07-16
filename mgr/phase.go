@@ -17,7 +17,7 @@ func NewPhase(
 	fmt.Println("")
 	fmt.Println("<<< NewPhase/n")
 
-	recipePath := common.GetRecipePath(templaterDirpath)
+	recipePath := common.GetRecipePath(templaterDirpath, false)
 	fmt.Println("templaterDirpath::", templaterDirpath)
 	fmt.Println("recipePath::", recipePath)
 	if templaterDirpath != recipePath && !strings.HasPrefix(templaterDirpath, recipePath) {

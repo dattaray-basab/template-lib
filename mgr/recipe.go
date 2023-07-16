@@ -13,7 +13,7 @@ func NewRecipe(absPathToSource string, absPathToRecipeParent string) {
 	fmt.Println("absPathToRecipeParent::", absPathToRecipeParent)
 	fmt.Println("absPathToSource::", absPathToSource)
 	absPathToRecipe := filepath.Join(absPathToRecipeParent, "__recipe")
-	pathToRecipe := common.GetRecipePath(absPathToRecipe)
+	pathToRecipe := common.GetRecipePath(absPathToRecipe, true)
 	fmt.Println("pathToRecipe::", pathToRecipe)
 	fmt.Println(">>> NewRecipe")
 	fmt.Println()
