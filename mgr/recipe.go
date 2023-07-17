@@ -10,13 +10,13 @@ import (
 	"github.com/dattaray-basab/template-lib/common"
 )
 
-func NewRecipe(absPathToSource string, absPathToRecipeParent string) error {
+func NewRecipe(absPathToSource string, absPathToRecipeParent string) string {
 	pathToRecipe := prolog(absPathToRecipeParent, absPathToSource)
-	err := CreatePathIfAbsent(pathToRecipe)
-	if err != nil {
-		return err
-	}
-	return nil
+	// err := CreatePathIfAbsent(pathToRecipe)
+	// if err != nil {
+	// 	return err
+	// }
+	return pathToRecipe
 }
 
 func prolog(absPathToRecipeParent string, absPathToSource string) string {
