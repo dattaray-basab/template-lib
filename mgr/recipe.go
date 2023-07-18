@@ -10,7 +10,7 @@ import (
 	"github.com/dattaray-basab/template-lib/common"
 )
 
-func NewRecipe(absPathToSource string, absPathToRecipeParent string) string {
+func CreateRecipe(absPathToSource string, absPathToRecipeParent string) string {
 	pathToRecipe := prolog(absPathToRecipeParent, absPathToSource)
 	// err := CreatePathIfAbsent(pathToRecipe)
 	// if err != nil {
@@ -21,13 +21,13 @@ func NewRecipe(absPathToSource string, absPathToRecipeParent string) string {
 
 func prolog(absPathToRecipeParent string, absPathToSource string) string {
 	fmt.Println()
-	fmt.Println("<<< NewRecipe/n")
+	fmt.Println("<<< CreateRecipe/n")
 	fmt.Println("absPathToRecipeParent::", absPathToRecipeParent)
 	fmt.Println("absPathToSource::", absPathToSource)
 	absPathToRecipe := filepath.Join(absPathToRecipeParent, "__recipe")
 	pathToRecipe := common.GetRecipePath(absPathToRecipe, true)
 	fmt.Println("pathToRecipe::", pathToRecipe)
-	fmt.Println(">>> NewRecipe")
+	fmt.Println(">>> CreateRecipe")
 	fmt.Println()
 	return pathToRecipe
 }
