@@ -10,9 +10,13 @@ import (
 	"github.com/dattaray-basab/template-lib/common"
 )
 
+var _overwrite bool = true
+
 func CreateRecipe(absPathToSource string, absPathToRecipeParent string, overwrite bool) string {
 
-	pathToRecipe := prolog(absPathToRecipeParent, absPathToSource, overwrite)
+	_overwrite = overwrite
+
+	pathToRecipe := prolog(absPathToRecipeParent, absPathToSource)
 	// err := CreatePathIfAbsent(pathToRecipe)
 	// if err != nil {
 	// 	return err
@@ -20,12 +24,12 @@ func CreateRecipe(absPathToSource string, absPathToRecipeParent string, overwrit
 	return pathToRecipe
 }
 
-func prolog(absPathToRecipeParent string, absPathToSource string, overwrite bool) string {
+func prolog(absPathToRecipeParent string, absPathToSource string) string {
 	fmt.Println()
 	fmt.Println("<<< CreateRecipe/n")
 	fmt.Println("absPathToRecipeParent::", absPathToRecipeParent)
 	fmt.Println("absPathToSource::", absPathToSource)
-	fmt.Println("overwrite::", overwrite)
+	fmt.Println("overwrite::", _overwrite)
 	absPathToRecipe := filepath.Join(absPathToRecipeParent, "__recipe")
 	pathToRecipe := common.GetRecipePath(absPathToRecipe, true)
 	fmt.Println("pathToRecipe::", pathToRecipe)
