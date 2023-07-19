@@ -11,7 +11,8 @@ import (
 )
 
 func CreateRecipe(absPathToSource string, absPathToRecipeParent string, overwrite bool) string {
-	pathToRecipe := prolog(absPathToRecipeParent, absPathToSource)
+
+	pathToRecipe := prolog(absPathToRecipeParent, absPathToSource, overwrite)
 	// err := CreatePathIfAbsent(pathToRecipe)
 	// if err != nil {
 	// 	return err
@@ -19,11 +20,12 @@ func CreateRecipe(absPathToSource string, absPathToRecipeParent string, overwrit
 	return pathToRecipe
 }
 
-func prolog(absPathToRecipeParent string, absPathToSource string) string {
+func prolog(absPathToRecipeParent string, absPathToSource string, overwrite bool) string {
 	fmt.Println()
 	fmt.Println("<<< CreateRecipe/n")
 	fmt.Println("absPathToRecipeParent::", absPathToRecipeParent)
 	fmt.Println("absPathToSource::", absPathToSource)
+	fmt.Println("overwrite::", overwrite)
 	absPathToRecipe := filepath.Join(absPathToRecipeParent, "__recipe")
 	pathToRecipe := common.GetRecipePath(absPathToRecipe, true)
 	fmt.Println("pathToRecipe::", pathToRecipe)
